@@ -1,71 +1,71 @@
 .nav__burger-menu {
-  display: none;
-  position: relative;
-  width: 30px;
-  border: none;
-  background-color: transparent;
-  touch-action: none;
+    display: none;
+    position: relative;
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    touch-action: none;
 }
 
 .burger-button {
-  border: none;
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
 }
   
 .burger-button:hover {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .burger-button span {
-  position: absolute;
-  width: 30px;
-  height: 3px;
-  background-color: var(--burger-button-color);
-  left: 0;
-  transition: transform .5s, opacity .5s, background-color .5s;
-  z-index: 4;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: var(--burger-button-color);
+    left: 0;
+    transition: transform .5s, opacity .5s, background-color .5s;
+    z-index: 4;
 }
 
 .burger-button span:nth-child(1) {
-  transform: translateY(-13px);
+    transform: translateY(-13px);
 }
 
 .burger-button span:nth-child(2) {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .burger-button span:nth-child(3) {
-  transform: translateY(7px);
+    transform: translateY(7px);
 }
 
 .navbar.open .burger-button span:nth-child(1) {
-  transform: translateY(-3px) rotate(45deg);
+    transform: translateY(-3px) rotate(45deg);
 }
 
 .navbar.open .burger-button span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .navbar.open .burger-button span:nth-child(3) {
-  transform: translateY(-3px) rotate(-45deg);
+    transform: translateY(-3px) rotate(-45deg);
 }
 
 .blur{
-  display: none;
-  width: 100dvw;
-  height: 100dvh;
-  backdrop-filter: blur(2px);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
+    display: none;
+    width: 100dvw;
+    height: 100dvh;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
 }
 
 .navbar.open .blur {
-  display: block;
-  position: fixed;
+    display: block;
+    position: fixed;
 }
