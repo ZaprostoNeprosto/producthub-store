@@ -1,6 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+const initialState = JSON.parse(localStorage.getItem('state')) || {
     cart: [],
 };
 
@@ -19,6 +19,7 @@ const cartSlice = createSlice({
                 // immer makes this immutable
                 state.cart.push({ ...action.payload, quantity: 1 });
             }
+            localStorage.setItem('state', JSON.stringify(state));
         },
         removeProduct: (state, action) => {
             const index = state.cart.findIndex(
@@ -26,6 +27,7 @@ const cartSlice = createSlice({
             );
             // immer makes this immutable
             state.cart.splice(index, 1);
+            localStorage.setItem('state', JSON.stringify(state));
         },
     },
 });

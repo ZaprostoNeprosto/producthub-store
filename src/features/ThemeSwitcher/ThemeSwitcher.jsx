@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react';
 import Button from '../../shared/ui/Button/Button';
 
 export default function ThemeSwitcher() {
-    const [theme, setTheme] = useState(
-        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light',
-    );
+    let initialTheme = '';
+    const localStorageTheme = localStorage.getItem('theme') || null;
+    if (localStorageTheme && (localStorageTheme === 'Dark' || localStorageTheme === 'Light')) {
+        initialTheme = localStorageTheme;
+    } else {
+        initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light';
+    }
+    const [theme, setTheme] = useState(initialTheme);
 
     useEffect(() => {
         if (theme === 'Dark') {
@@ -12,6 +17,7 @@ export default function ThemeSwitcher() {
         } else {
             document.body.classList.remove('dark');
         }
+        localStorage.setItem('theme', theme);
     }, [theme]);
 
     const handleButtonThemeSwitch = () => {

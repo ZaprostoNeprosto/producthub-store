@@ -64,9 +64,7 @@ export default function Navbar(props) {
                     </ul>
                 </div>
                 <NavLink to="/cart" className="nav-item nav-cart btn btn-accent">
-                    Cart (
-                    {cartCount}
-                    )
+                    {cartCount === 0 ? 'Cart' : `Cart (${cartCount})`}
                 </NavLink>
             </div>
         </nav>
