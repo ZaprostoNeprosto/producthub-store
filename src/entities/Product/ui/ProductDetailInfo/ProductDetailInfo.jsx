@@ -12,7 +12,8 @@ export default function ProductDetailInfo() {
             <p>
                 {product.description}
                 {' '}
-                sold at
+                sold aty
+                {' '}
                 <strong>
                     $
                     {product.price}
